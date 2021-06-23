@@ -229,6 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 608408229}
+  - component: {fileID: 608408233}
   - component: {fileID: 608408232}
   - component: {fileID: 608408231}
   - component: {fileID: 608408230}
@@ -316,6 +317,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608408228}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &608408233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608408228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e7a37c4e3ae25468c7eacd9238d37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 30
+  enemyManager: {fileID: 1135978400}
 --- !u!1 &628129371
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010205186}
+  - component: {fileID: 1010205190}
   - component: {fileID: 1010205189}
   - component: {fileID: 1010205188}
   - component: {fileID: 1010205187}
@@ -637,6 +653,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010205185}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1010205190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010205185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e7a37c4e3ae25468c7eacd9238d37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 30
+  enemyManager: {fileID: 1135978400}
 --- !u!1 &1135978398
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1668399307}
+  - component: {fileID: 1668399311}
   - component: {fileID: 1668399310}
   - component: {fileID: 1668399309}
   - component: {fileID: 1668399308}
@@ -783,6 +814,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668399306}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1668399311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668399306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e7a37c4e3ae25468c7eacd9238d37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 30
+  enemyManager: {fileID: 1135978400}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
