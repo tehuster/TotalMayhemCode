@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public PlayerScriptable playerStats;
     public List<GameObject> EnemiesGO;
 }

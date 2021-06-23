@@ -5,6 +5,20 @@ using UnityEngine;
 public class BasicEnemy : BaseEnemy
 {
     public EnemyManager enemyManager;
+    public float moveSpeed;
+
+    private Rigidbody rBody;
+
+    private void Awake()
+    {
+        rBody = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 direction = (enemyManager.playerStats.currentPosition - transform.position).normalized;
+        rBody.AddForce(direction * moveSpeed);
+    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -18,7 +32,6 @@ public class BasicEnemy : BaseEnemy
 
     private void receiveDamage(int damage)
     {
-        Debug.Log($"{damage} received!");
         healthPoints -= damage;
 
         if (healthPoints <= 0)

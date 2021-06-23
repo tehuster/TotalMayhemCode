@@ -17,6 +17,11 @@ public class Companion_A : CompanionBase
 
     private void Update()
     {
+        Targetting();
+    }
+
+    private void Targetting()
+    {
         float closestEnemy = float.MaxValue;
         GameObject targetEnemy = null;
         foreach (GameObject enemy in enemyManager.EnemiesGO)

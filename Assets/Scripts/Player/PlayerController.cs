@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public InputScriptable playerInput;
     public ShipStatsScriptable schipStats;
+    public PlayerScriptable playerStats;
 
     private Vector3 direction;
     private Rigidbody rBody;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         RotateTowardsMouse();
         MovePlayer();
+        playerStats.currentPosition = transform.position;
     }
 
     private void MovePlayer()

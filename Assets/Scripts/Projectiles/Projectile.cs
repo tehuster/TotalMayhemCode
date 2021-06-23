@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Projectile : ProjectileBase
 {
-    public int damage;
-    public float lifeTime;
-
     private void Start()
     {
         Destroy(gameObject, lifeTime);
