@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float turnSpeed;
+    public InputScriptable playerInput;
+    public ShipStatsScriptable schipStats;
 
-
-    private float horizontal;
-    private float vertical;
+    private Vector3 direction;
+    private Rigidbody rBody;
     private Camera cam;
 
     private void Start()
     {
         cam = Camera.main;
+        rBody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
         RotateTowardsMouse();
+        MovePlayer();
+    }
+
+    private void MovePlayer()
+    {
+        Vector3 normalizedRotation = transform.rotation * Vector3.forward;
+        rBody.AddForce((normalizedRotation * playerInput.vertical) * schipStats.speed * Time.fixedDeltaTime);
+        rBody.AddForce((transform.right * playerInput.horizontal) * schipStats.strafeSpeed * Time.fixedDeltaTime);
     }
 
     private void RotateTowardsMouse()
     {
-        float camDistance = Vector3.Distance(transform.position, cam.transform.position);
-
-        Vector3 mousePosition = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDistance));
-
-        var targetDirection = (mousePosition - transform.position).normalized;
-        var singleStep = turnSpeed * Time.fixedDeltaTime;
-        var newDirection = Vector3.RotateTowards(transform.forward, targetDirection, turnSpeed, 0.0f);
+        var targetDirection = (playerInput.mousePosition - transform.position).normalized;
+        var singleStep = schipStats.turnSpeed * Time.fixedDeltaTime;
+        var newDirection = Vector3.RotateTowards(transform.forward, targetDirection, schipStats.turnSpeed, 0.0f);
 
         newDirection.y = 0;
 
