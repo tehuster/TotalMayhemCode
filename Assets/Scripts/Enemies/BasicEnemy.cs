@@ -36,7 +36,7 @@ public class BasicEnemy : BaseEnemy
 
         if (healthPoints <= 0)
         {
-            enemyManager.EnemiesGO.Remove(this.gameObject);
+            enemyManager.enemiesGO.Remove(this.gameObject);
             Destroy(gameObject);
         }
 

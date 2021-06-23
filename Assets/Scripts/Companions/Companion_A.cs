@@ -24,7 +24,7 @@ public class Companion_A : CompanionBase
     {
         float closestEnemy = float.MaxValue;
         GameObject targetEnemy = null;
-        foreach (GameObject enemy in enemyManager.EnemiesGO)
+        foreach (GameObject enemy in enemyManager.enemiesGO)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance < closestEnemy)
