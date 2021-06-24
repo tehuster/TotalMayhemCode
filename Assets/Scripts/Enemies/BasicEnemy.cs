@@ -17,7 +17,7 @@ public class BasicEnemy : BaseEnemy
     private void FixedUpdate()
     {
         Vector3 direction = (enemyManager.playerStats.currentPosition - transform.position).normalized;
-        rBody.AddForce(direction * moveSpeed);
+        rBody.velocity = direction * moveSpeed;
     }
 
     private void OnCollisionEnter(Collision other)

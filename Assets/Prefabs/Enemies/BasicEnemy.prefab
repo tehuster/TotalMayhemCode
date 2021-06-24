@@ -50,7 +50,7 @@ MonoBehaviour:
   healthPoints: 30
   damage: 10
   enemyManager: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 0.001
 --- !u!33 &4936439565794208474
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057da01615a8def4ea89861ccfa9f4bc, type: 3}
   m_Name: ShipStats
   m_EditorClassIdentifier: 
-  turnSpeed: 0.04
+  turnSpeed: 0.1
   speed: 300
   strafeSpeed: 600

@@ -196,6 +196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
+--- !u!1 &161357786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4936439565794208478, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
+  m_PrefabInstance: {fileID: 161357785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &161357787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4936439565794208477, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
@@ -680,6 +685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
+--- !u!1 &529256047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4936439565794208478, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
+  m_PrefabInstance: {fileID: 529256046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &529256048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4936439565794208477, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
@@ -1197,7 +1207,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: a236225139e920641ab7c42f1f8c1adc, type: 2}
   levelStats: {fileID: 11400000, guid: efbc6c39777f08a42850c973afb1861c, type: 2}
-  enemiesGO: []
+  enemiesGO:
+  - {fileID: 161357786}
+  - {fileID: 529256047}
+  - {fileID: 1948683645}
 --- !u!1 &1388202027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesText: {fileID: 1639979331}
-  levelStats: {fileID: 0}
+  levelStats: {fileID: 11400000, guid: efbc6c39777f08a42850c973afb1861c, type: 2}
 --- !u!1 &1401380887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,7 +1714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1871911631
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1844,6 +1857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
+--- !u!1 &1948683645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4936439565794208478, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
+  m_PrefabInstance: {fileID: 1948683644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1948683646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4936439565794208477, guid: e2809a570039f5448b2acdf5a589d30a, type: 3}
