@@ -47,10 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e7a37c4e3ae25468c7eacd9238d37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyManager: {fileID: 0}
   healthPoints: 30
   damage: 10
-  enemyManager: {fileID: 0}
-  moveSpeed: 0.001
+  moveSpeed: 2
 --- !u!33 &4936439565794208474
 MeshFilter:
   m_ObjectHideFlags: 0

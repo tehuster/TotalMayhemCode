@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BasicEnemy : BaseEnemy
 {
-    public EnemyManager enemyManager;
     public float moveSpeed;
 
     private Rigidbody rBody;
@@ -39,6 +38,5 @@ public class BasicEnemy : BaseEnemy
             enemyManager.enemiesGO.Remove(this.gameObject);
             Destroy(gameObject);
         }
-
     }
 }

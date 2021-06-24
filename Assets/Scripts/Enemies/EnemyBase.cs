@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour
 {
+    public EnemyManager enemyManager;
     public int healthPoints;
     public int damage;
 }
