@@ -17,6 +17,8 @@ public class EnemyManager : MonoBehaviour
     public LevelScriptable levelStats;
     public SpawnerScriptable[] spawners;
 
+    private GameObject furthestEnemy;
+
     private void Start()
     {
         levelStats.enemiesGo = enemiesGO;
@@ -40,14 +42,20 @@ public class EnemyManager : MonoBehaviour
 
         targetGroup.AddMember(randomSpawnpoint, 1, 2);
 
-        for (int i = 0; i < enemyPositions.Length; i++)
+        foreach (Vector3 enemyPosition in enemyPositions)
         {
-            GameObject newEnemy = Instantiate(basicEnemy, enemyPositions[i], Quaternion.identity);
+            //Replacing with ObjectPooling
+            GameObject newEnemy = Instantiate(basicEnemy, enemyPosition, Quaternion.identity);
             newEnemy.GetComponent<EnemyBase>().enemyManager = this;
             enemiesGO.Add(newEnemy);
             yield return new WaitForSeconds(waitTime);
         }
-
+        yield return new WaitForSeconds(1f);
+        foreach (GameObject enemy in enemiesGO)
+        {
+            enemy.GetComponent<EnemyBase>().Activate();
+        }
+        yield return new WaitForSeconds(2f);
         targetGroup.RemoveMember(randomSpawnpoint);
     }
 }

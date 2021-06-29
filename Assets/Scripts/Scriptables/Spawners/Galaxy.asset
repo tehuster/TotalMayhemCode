@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Galaxy
   m_EditorClassIdentifier: 
   degree: 5
-  scale: 2
+  scale: 3

@@ -48,9 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 0}
-  healthPoints: 30
+  healthPoints: 100
   damage: 10
-  moveSpeed: 2
+  moveSpeed: 4
+  glowColor: {r: 4.237095, g: 0, b: 0.59896106, a: 1}
 --- !u!33 &4936439565794208474
 MeshFilter:
   m_ObjectHideFlags: 0

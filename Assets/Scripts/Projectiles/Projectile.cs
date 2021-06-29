@@ -6,6 +6,7 @@ public class Projectile : ProjectileBase
 {
     private void Start()
     {
+        rBody = GetComponent<Rigidbody>();
         Destroy(gameObject, lifeTime);
     }
 

@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
-  m_FogColor: {r: 0.65080994, g: 0.666729, b: 0.7075472, a: 1}
+  m_Fog: 0
+  m_FogColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
   m_LinearFogStart: 0
@@ -1145,8 +1145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc62c7cbe1dd8214b9c600841f18e214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetingRange: 20
-  cooldownTimer: 0.1
+  targetingRange: 30
+  cooldownTimer: 1
   enemyManager: {fileID: 1135978400}
   bullet: {fileID: 4359773542699163680, guid: de1ca4633c08b2a46a20dd602e832ec7, type: 3}
 --- !u!23 &904875270

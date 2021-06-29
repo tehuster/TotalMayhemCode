@@ -49,7 +49,7 @@ public class Companion_A : CompanionBase
 
         Vector3 direction = (target.transform.position - transform.position).normalized;
         projectile.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
-        projectile.GetComponent<Rigidbody>().AddForce(direction * 300);
+        projectile.GetComponent<Rigidbody>().AddForce(direction * 600);
 
         StartCoroutine(Reloading());
     }
