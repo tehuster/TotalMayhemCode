@@ -10,10 +10,10 @@ public class Companion_A : CompanionBase
 
 
     [Header("References")]
-    public EnemyManager enemyManager;
-    public GameObject bullet;
-    public GameObject turret;
-    public Transform barrel;
+    [SerializeField] private EnemyManager enemyManager;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject turret;
+    [SerializeField] private Transform barrel;
 
 
     private bool isCoolingDown = false;
@@ -47,14 +47,13 @@ public class Companion_A : CompanionBase
         if (isCoolingDown)
             return;
 
-
-
         GameObject projectile = Instantiate(bullet, barrel.position, bullet.transform.rotation);
-
         Vector3 direction = (target.transform.position - transform.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+
         turret.transform.rotation = rotation;
         projectile.transform.rotation = rotation;
+
         projectile.GetComponent<Rigidbody>().AddForce(direction * 600);
 
         StartCoroutine(Reloading());

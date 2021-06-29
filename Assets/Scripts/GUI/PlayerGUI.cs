@@ -5,8 +5,8 @@ using TMPro;
 
 public class PlayerGUI : MonoBehaviour
 {
-    public TMP_Text HealthPointsText;
-    public PlayerScriptable playerStats;
+    [SerializeField] private TMP_Text HealthPointsText;
+    [SerializeField] private PlayerScriptable playerStats;
 
     private void Update()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public PlayerScriptable playerStats;
+    [SerializeField] private PlayerScriptable playerStats;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -12,7 +12,7 @@ public class PlayerCollision : MonoBehaviour
             return;
 
         EnemyBase enemy = other.transform.GetComponent<EnemyBase>();
-        receiveDamage(enemy.damage);
+        receiveDamage(enemy.Damage);
     }
 
     private void receiveDamage(int damage)

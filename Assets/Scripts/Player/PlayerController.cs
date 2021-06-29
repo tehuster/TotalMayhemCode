@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public InputScriptable playerInput;
-    public ShipStatsScriptable schipStats;
-    public PlayerScriptable playerStats;
+    [SerializeField] private InputScriptable playerInput;
+    [SerializeField] private ShipStatsScriptable schipStats;
+    [SerializeField] private PlayerScriptable playerStats;
 
     private Vector3 direction;
     private Rigidbody rBody;

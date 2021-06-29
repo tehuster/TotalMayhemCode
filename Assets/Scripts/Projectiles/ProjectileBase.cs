@@ -5,7 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public abstract class ProjectileBase : MonoBehaviour
 {
-    public int damage;
-    public float lifeTime;
+    [SerializeField] protected int damage;
+    public int Damage
+    {
+        get { return damage; }
+    }
+    [SerializeField] protected float lifeTime;
     protected Rigidbody rBody;
 }

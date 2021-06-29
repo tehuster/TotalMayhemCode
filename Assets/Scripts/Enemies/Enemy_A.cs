@@ -4,9 +4,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Renderer))]
-public class BasicEnemy : EnemyBase
+public class Enemy_A : EnemyBase
 {
-    public float moveSpeed;
+    [SerializeField] private float moveSpeed;
     [ColorUsage(true, true)] public Color glowColor;
 
     private Rigidbody rBody;
@@ -45,7 +45,7 @@ public class BasicEnemy : EnemyBase
 
         ProjectileBase projectile = other.transform.GetComponent<ProjectileBase>();
 
-        receiveDamage(projectile.damage);
+        receiveDamage(projectile.Damage);
     }
 
     private void receiveDamage(int damage)

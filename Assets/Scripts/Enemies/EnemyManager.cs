@@ -5,17 +5,14 @@ using Cinemachine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public int EnemyAmount;
-
-    public CinemachineTargetGroup targetGroup;
-
-
-    public List<Transform> spawningPositions;
+    [SerializeField] private int EnemyAmount;
+    [SerializeField] private CinemachineTargetGroup targetGroup;
+    [SerializeField] private List<Transform> spawningPositions;
     public List<GameObject> enemiesGO;
-    public GameObject basicEnemy;
-    public PlayerScriptable playerStats;
-    public LevelScriptable levelStats;
-    public SpawnerScriptable[] spawners;
+    [SerializeField] private GameObject basicEnemy;
+    [SerializeField] public PlayerScriptable playerStats;
+    [SerializeField] private LevelScriptable levelStats;
+    [SerializeField] private SpawnerScriptable[] spawners;
 
     private GameObject furthestEnemy;
 
