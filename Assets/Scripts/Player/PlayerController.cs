@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
 
     private void RotateTowardsMouse()
     {
-        var targetDirection = (playerInput.mousePosition - transform.position).normalized;
-        var singleStep = schipStats.turnSpeed * Time.fixedDeltaTime;
-        var newDirection = Vector3.RotateTowards(transform.forward, targetDirection, schipStats.turnSpeed, 0.0f);
+        Vector3 targetDirection = (playerInput.mousePosition - transform.position).normalized;
+        float singleStep = schipStats.turnSpeed * Time.fixedDeltaTime;
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, schipStats.turnSpeed, 0.0f);
 
         newDirection.y = 0;
 

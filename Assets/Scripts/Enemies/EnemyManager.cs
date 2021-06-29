@@ -5,9 +5,9 @@ using Cinemachine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public float degree;
-    public float scale;
     public int EnemyAmount;
+
+    public CinemachineTargetGroup targetGroup;
 
 
     public List<Transform> spawningPositions;
@@ -15,6 +15,8 @@ public class EnemyManager : MonoBehaviour
     public GameObject basicEnemy;
     public PlayerScriptable playerStats;
     public LevelScriptable levelStats;
+    public SpawnerScriptable[] spawners;
+
     private void Start()
     {
         levelStats.enemiesGo = enemiesGO;
@@ -25,26 +27,27 @@ public class EnemyManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            int r = Random.Range(0, spawningPositions.Count);
-
-            for (int i = 0; i < EnemyAmount; i++)
-            {
-                Vector3 newPosition = CalculatePosition(Random.Range(0f, 1f), Random.Range(0f, 1f), i);
-                newPosition += spawningPositions[r].position;
-
-                GameObject newEnemy = Instantiate(basicEnemy, newPosition, Quaternion.identity);
-                newEnemy.GetComponent<BaseEnemy>().enemyManager = this;
-                enemiesGO.Add(newEnemy);
-            }
+            StartCoroutine(SpawnEnemies(0.05f));
         }
     }
-    private Vector3 CalculatePosition(float degree, float scale, int amount)
+
+    IEnumerator SpawnEnemies(float waitTime)
     {
-        double angle = amount * (degree * Mathf.Deg2Rad);
-        float r = scale * Mathf.Sqrt(amount);
-        float x = r * (float)System.Math.Cos(angle);
-        float z = r * (float)System.Math.Sin(angle);
-        Vector3 position = new Vector3(x, 0, z);
-        return position;
+        int rPos = Random.Range(0, spawningPositions.Count);
+        Transform randomSpawnpoint = spawningPositions[rPos];
+        int rSpawn = Random.Range(0, spawners.Length);
+        Vector3[] enemyPositions = spawners[rSpawn].GetSpawnPositions(randomSpawnpoint.position, EnemyAmount);
+
+        targetGroup.AddMember(randomSpawnpoint, 1, 2);
+
+        for (int i = 0; i < enemyPositions.Length; i++)
+        {
+            GameObject newEnemy = Instantiate(basicEnemy, enemyPositions[i], Quaternion.identity);
+            newEnemy.GetComponent<EnemyBase>().enemyManager = this;
+            enemiesGO.Add(newEnemy);
+            yield return new WaitForSeconds(waitTime);
+        }
+
+        targetGroup.RemoveMember(randomSpawnpoint);
     }
 }

@@ -11,7 +11,7 @@ public class PlayerCollision : MonoBehaviour
         if (other.transform.tag != "Enemy")
             return;
 
-        BaseEnemy enemy = other.transform.GetComponent<BaseEnemy>();
+        EnemyBase enemy = other.transform.GetComponent<EnemyBase>();
         receiveDamage(enemy.damage);
     }
 

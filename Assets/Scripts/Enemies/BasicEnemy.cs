@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : BaseEnemy
+public class BasicEnemy : EnemyBase
 {
     public float moveSpeed;
 

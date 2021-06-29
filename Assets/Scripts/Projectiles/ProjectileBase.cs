@@ -6,4 +6,5 @@ public abstract class ProjectileBase : MonoBehaviour
 {
     public int damage;
     public float lifeTime;
+
 }

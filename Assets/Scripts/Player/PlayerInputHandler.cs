@@ -12,7 +12,7 @@ public class PlayerInputHandler : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         float camDistance = Vector3.Distance(Vector3.zero, mainCamera.transform.position);
         playerInput.mousePosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDistance));

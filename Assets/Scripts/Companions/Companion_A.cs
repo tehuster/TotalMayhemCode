@@ -5,8 +5,9 @@ using UnityEngine;
 public class Companion_A : CompanionBase
 {
     [Header("Settings")]
-    public float targetingRange;
-    public float cooldownTimer;
+    [SerializeField] private float targetingRange;
+    [SerializeField] private float cooldownTimer;
+
 
     [Header("References")]
     public EnemyManager enemyManager;
@@ -17,13 +18,14 @@ public class Companion_A : CompanionBase
 
     private void Update()
     {
-        Targetting();
+        Targeting();
     }
 
-    private void Targetting()
+    private void Targeting()
     {
         float closestEnemy = float.MaxValue;
         GameObject targetEnemy = null;
+
         foreach (GameObject enemy in enemyManager.enemiesGO)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
