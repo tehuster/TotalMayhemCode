@@ -5,6 +5,7 @@ using TMPro;
 
 public class LevelGUI : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private TMP_Text EnemiesText;
     [SerializeField] private LevelScriptable levelStats;
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private InputScriptable playerInput;
     private Camera mainCamera;
 

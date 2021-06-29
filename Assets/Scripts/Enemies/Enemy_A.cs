@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Renderer))]
 public class Enemy_A : EnemyBase
 {
+    [Header("ExtraSettings")]
     [SerializeField] private float moveSpeed;
     [ColorUsage(true, true)] public Color glowColor;
 

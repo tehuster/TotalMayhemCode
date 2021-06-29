@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private PlayerScriptable playerStats;
 
     private void OnCollisionEnter(Collision other)

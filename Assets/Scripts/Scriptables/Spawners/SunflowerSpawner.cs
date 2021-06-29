@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SunflowerSpawner", menuName = "Scriptables/Spawners/Sunflower", order = 0)]
 public class SunflowerSpawner : SpawnerScriptable
 {
+    [Header("Settings")]
     [SerializeField] private float degree;
     [SerializeField] private float scale;
 

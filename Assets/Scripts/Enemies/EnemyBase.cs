@@ -4,9 +4,10 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    public EnemyManager enemyManager;
+    [Header("BaseSettings")]
     [SerializeField] protected int healthPoints;
     [SerializeField] private int damage;
+    [HideInInspector] public EnemyManager enemyManager;
     public int Damage
     {
         get { return damage; }

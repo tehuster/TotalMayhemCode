@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public abstract class ProjectileBase : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] protected int damage;
     public int Damage
     {

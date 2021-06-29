@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerGUI : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private TMP_Text HealthPointsText;
     [SerializeField] private PlayerScriptable playerStats;
 

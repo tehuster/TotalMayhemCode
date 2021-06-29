@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private InputScriptable playerInput;
     [SerializeField] private ShipStatsScriptable schipStats;
     [SerializeField] private PlayerScriptable playerStats;
