@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5db83e3b4458b14b991b5cc46bd4039, type: 3}
   m_Name: Killed_50
   m_EditorClassIdentifier: 
-  tag: 
-  image: {fileID: 0}
+  tag: Interchange Killa
+  image: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   achieved: 0
-  Description: 
+  Description: '@ 50 Enemy kills'

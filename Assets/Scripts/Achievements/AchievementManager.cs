@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
 {
-
-    public AchievementUI achievementUI;
-    public AchievementScriptable[] Achievements;
+    [SerializeField] private AchievementGUI achievementUI;
+    [SerializeField] private AchievementScriptable[] Achievements;
     private Dictionary<string, AchievementScriptable> AchievementsByTag;
     private int enemyDeathCounter = 0;
 

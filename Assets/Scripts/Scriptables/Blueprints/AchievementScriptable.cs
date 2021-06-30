@@ -8,7 +8,6 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "AchievementScriptable", menuName = "Scriptables/Achievement", order = 0)]
 public class AchievementScriptable : ScriptableObject
 {
-
     public string tag;
     public Texture2D image;
     public bool achieved = false;

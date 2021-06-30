@@ -104,10 +104,15 @@ public class GameManager : MonoBehaviour
 
     private void GameoverExit()
     {
-        enemyManager.RemoveAllEnemies();
+        enemyManager.ResetManager();
         playerStats.ResetPlayer();
         playerTransform.position = Vector3.zero;
         gameoverUI.SetActive(false);
     }
     #endregion
+
+    public void OnReceivePoints(int points)
+    {
+        playerStats.scoreStats.score += points;
+    }
 }

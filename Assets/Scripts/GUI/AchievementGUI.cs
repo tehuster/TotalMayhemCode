@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class AchievementUI : MonoBehaviour
+public class AchievementGUI : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float AchievementPopupTime;
+
     [Header("UI References")]
     [SerializeField] private GameObject panelUI;
     [SerializeField] private TMP_Text AchievementText;

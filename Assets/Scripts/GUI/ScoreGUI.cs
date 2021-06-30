@@ -11,6 +11,6 @@ public class ScoreGUI : MonoBehaviour
 
     private void Update()
     {
-        ScoreText.text = $"{scoreStats.score} points!!";
+        ScoreText.text = $"{scoreStats.score} points";
     }
 }

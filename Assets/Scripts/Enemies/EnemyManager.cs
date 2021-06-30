@@ -7,33 +7,32 @@ using Cinemachine;
 public class EnemyManager : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int EnemyAmount;
+    [SerializeField] private float spawnTime;
 
     [Header("Event")]
     public UnityEvent<int> OnEnemyDied;
 
     [Header("References")]
-    [HideInInspector] public List<GameObject> enemiesGO;
     public PlayerScriptable playerStats;
+    [HideInInspector] public List<GameObject> enemiesGO;
     [SerializeField] private GameObject basicEnemy;
     [SerializeField] private SpawnerScriptable[] spawners;
-    [SerializeField] private CinemachineTargetGroup targetGroup;
     [SerializeField] private List<Transform> spawningPositions;
+    [SerializeField] private CinemachineTargetGroup targetGroup;
 
-    private void Update()
+    private int level = 1;
+
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(SpawnEnemies(0.05f));
-        }
+        StartCoroutine(SpawnEnemies(level * 10, spawnTime));
     }
 
-    private IEnumerator SpawnEnemies(float waitTime)
+    private IEnumerator SpawnEnemies(int amount, float waitTime)
     {
         int rPos = Random.Range(0, spawningPositions.Count);
         Transform randomSpawnpoint = spawningPositions[rPos];
         int rSpawn = Random.Range(0, spawners.Length);
-        Vector3[] enemyPositions = spawners[rSpawn].GetSpawnPositions(randomSpawnpoint.position, EnemyAmount);
+        Vector3[] enemyPositions = spawners[rSpawn].GetSpawnPositions(randomSpawnpoint.position, amount);
 
         targetGroup.AddMember(randomSpawnpoint, 1, 2);
 
@@ -54,18 +53,26 @@ public class EnemyManager : MonoBehaviour
         targetGroup.RemoveMember(randomSpawnpoint);
     }
 
-    public void RemoveAllEnemies()
+    public void ResetManager()
     {
         foreach (GameObject enemy in enemiesGO)
         {
             Destroy(enemy);
         }
         enemiesGO.Clear();
+        level = 1;
+        StartCoroutine(SpawnEnemies(level * 10, spawnTime));
     }
 
     public void OnEnemyDeath(GameObject enemy, int points)
     {
         enemiesGO.Remove(enemy);
         OnEnemyDied?.Invoke(points);
+
+        if (enemiesGO.Count == 0)
+        {
+            level++;
+            StartCoroutine(SpawnEnemies(level * 10, spawnTime));
+        }
     }
 }
