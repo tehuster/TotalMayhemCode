@@ -13,14 +13,10 @@ public class Enemy_A : EnemyBase
     private Rigidbody rBody;
     private Renderer render;
 
-    private void Awake()
+    private void Start()
     {
         rBody = GetComponent<Rigidbody>();
         render = GetComponent<Renderer>();
-    }
-
-    private void Start()
-    {
         render.material.EnableKeyword("_EMISSION");
     }
 

@@ -20,6 +20,7 @@ public class SunflowerSpawner : SpawnerScriptable
 
         return spawnPositions;
     }
+
     private Vector3 CalculateSunFlowerPosition(float degree, float scale, int amount)
     {
         double angle = amount * (degree * Mathf.Deg2Rad);

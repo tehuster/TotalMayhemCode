@@ -31,7 +31,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnEnemies(float waitTime)
+    private IEnumerator SpawnEnemies(float waitTime)
     {
         int rPos = Random.Range(0, spawningPositions.Count);
         Transform randomSpawnpoint = spawningPositions[rPos];

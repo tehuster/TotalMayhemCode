@@ -13,10 +13,10 @@ public class PlayerCollision : MonoBehaviour
             return;
 
         EnemyBase enemy = other.transform.GetComponent<EnemyBase>();
-        receiveDamage(enemy.Damage);
+        ReceiveDamage(enemy.Damage);
     }
 
-    private void receiveDamage(int damage)
+    private void ReceiveDamage(int damage)
     {
         playerStats.HealthPoints -= damage;
 
