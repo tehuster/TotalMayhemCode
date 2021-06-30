@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Cinemachine;
 
 public class EnemyManager : MonoBehaviour
@@ -8,8 +9,11 @@ public class EnemyManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int EnemyAmount;
 
+    [Header("Event")]
+    public UnityEvent<int> OnEnemyDied;
+
     [Header("References")]
-    public List<GameObject> enemiesGO;
+    [HideInInspector] public List<GameObject> enemiesGO;
     public PlayerScriptable playerStats;
     [SerializeField] private GameObject basicEnemy;
     [SerializeField] private SpawnerScriptable[] spawners;
@@ -59,8 +63,9 @@ public class EnemyManager : MonoBehaviour
         enemiesGO.Clear();
     }
 
-    public void OnEnemyDeath(int points)
+    public void OnEnemyDeath(GameObject enemy, int points)
     {
-        playerStats.scoreStats.score += points;
+        enemiesGO.Remove(enemy);
+        OnEnemyDied?.Invoke(points);
     }
 }

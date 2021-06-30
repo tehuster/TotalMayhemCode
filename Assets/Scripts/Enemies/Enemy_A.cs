@@ -51,8 +51,7 @@ public class Enemy_A : EnemyBase
 
         if (healthPoints <= 0)
         {
-            enemyManager.OnEnemyDeath(points);
-            enemyManager.enemiesGO.Remove(this.gameObject);
+            enemyManager.OnEnemyDeath(this.gameObject, points);
             Destroy(gameObject);
         }
     }
