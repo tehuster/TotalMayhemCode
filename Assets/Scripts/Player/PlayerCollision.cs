@@ -18,9 +18,9 @@ public class PlayerCollision : MonoBehaviour
 
     private void ReceiveDamage(int damage)
     {
-        playerStats.HealthPoints -= damage;
+        playerStats.healthPoints -= damage;
 
-        if (playerStats.HealthPoints <= 0)
+        if (playerStats.healthPoints <= 0)
         {
             Debug.Log("Gameover");
         }

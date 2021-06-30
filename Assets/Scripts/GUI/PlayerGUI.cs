@@ -11,6 +11,6 @@ public class PlayerGUI : MonoBehaviour
 
     private void Update()
     {
-        HealthPointsText.text = $"{playerStats.HealthPoints} / 100";
+        HealthPointsText.text = $"{playerStats.healthPoints} / 100";
     }
 }

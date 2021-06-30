@@ -56,4 +56,13 @@ public class EnemyManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         targetGroup.RemoveMember(randomSpawnpoint);
     }
+
+    public void RemoveAllEnemies()
+    {
+        foreach (GameObject enemy in enemiesGO)
+        {
+            Destroy(enemy);
+        }
+        enemiesGO.Clear();
+    }
 }
