@@ -7,10 +7,13 @@ public class PlayerScriptable : ScriptableObject
 {
     public Vector3 currentPosition;
     public int healthPoints;
-    [SerializeField] int startingHealthPoints;
+    public ScoreScriptable scoreStats;
+    [SerializeField] private int startingHealthPoints;
+
 
     public void ResetPlayer()
     {
         healthPoints = startingHealthPoints;
+        scoreStats.score = 0;
     }
 }

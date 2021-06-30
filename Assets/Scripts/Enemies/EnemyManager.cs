@@ -12,16 +12,9 @@ public class EnemyManager : MonoBehaviour
     public List<GameObject> enemiesGO;
     public PlayerScriptable playerStats;
     [SerializeField] private GameObject basicEnemy;
-    [SerializeField] private LevelScriptable levelStats;
     [SerializeField] private SpawnerScriptable[] spawners;
     [SerializeField] private CinemachineTargetGroup targetGroup;
     [SerializeField] private List<Transform> spawningPositions;
-
-    private void Start()
-    {
-        levelStats.enemiesGo = enemiesGO;
-        levelStats.totalEnemies = enemiesGO.Count;
-    }
 
     private void Update()
     {
@@ -43,7 +36,7 @@ public class EnemyManager : MonoBehaviour
         foreach (Vector3 enemyPosition in enemyPositions)
         {
             //Replacing with ObjectPooling
-            GameObject newEnemy = Instantiate(basicEnemy, enemyPosition, Quaternion.identity);
+            GameObject newEnemy = Instantiate(basicEnemy, enemyPosition, Quaternion.identity, this.transform);
             newEnemy.GetComponent<EnemyBase>().enemyManager = this;
             enemiesGO.Add(newEnemy);
             yield return new WaitForSeconds(waitTime);
@@ -64,5 +57,10 @@ public class EnemyManager : MonoBehaviour
             Destroy(enemy);
         }
         enemiesGO.Clear();
+    }
+
+    public void OnEnemyDeath(int points)
+    {
+        playerStats.scoreStats.score += points;
     }
 }

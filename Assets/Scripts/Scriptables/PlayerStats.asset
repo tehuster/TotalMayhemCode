@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   currentPosition: {x: 0, y: 0, z: 0}
-  HealthPoints: 100
+  healthPoints: 100
+  scoreStats: {fileID: 11400000, guid: efbc6c39777f08a42850c973afb1861c, type: 2}
+  startingHealthPoints: 100
