@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StateMachine
 {
+    //this is a comment
     public class State
     {
         public State(System.Action Enter = null, System.Action Update = null, System.Action Exit = null)
